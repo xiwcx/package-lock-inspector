@@ -1,3 +1,6 @@
+## ideas:
+- https://github.com/Parker-Ledoux/prettier-airbnb-config
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
