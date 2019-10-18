@@ -2,7 +2,7 @@ image: node:dubnium-alpine
 
 stages:
   - test
-  - pages
+  - deploy
 
 cache:
   paths:
@@ -18,8 +18,9 @@ pages:
   stage: deploy
   script:
     - npm run build
+    - cp -r build/* public
   artifacts:
     paths:
-      - build
+      - public
   only:
     - master

@@ -28,6 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://welchcanavan.gitlab.io/package-lock-inspector",
   "browserslist": {
     "production": [
       ">0.2%",
