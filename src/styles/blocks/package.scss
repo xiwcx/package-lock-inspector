@@ -1,7 +1,7 @@
 .package {
     background-color: var(--color-primary);
-    padding: 0.5em;
     margin: 0.25em;
+    padding: 0.5em;
 
     &__name {
         letter-spacing: 0.1em;
@@ -15,9 +15,9 @@
     }
 
     &__version {
-        @include type-emphasis();
-
         font-size: 0.8em;
         margin: 0 0.5em;
+
+        @include type-emphasis();
     }
 }

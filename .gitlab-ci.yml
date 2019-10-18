@@ -1,0 +1,25 @@
+image: node:dubnium-alpine
+
+stages:
+  - test
+  - pages
+
+cache:
+  paths:
+    - node_modules/
+
+test:
+  stage: test
+  script:
+    - npm install
+    - npm run lint:js && npm run lint:scss
+
+pages:
+  stage: deploy
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build
+  only:
+    - master

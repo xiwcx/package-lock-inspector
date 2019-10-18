@@ -13,12 +13,18 @@
     "react-dropzone": "^10.1.9",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "stylelint": "^11.1.1",
+    "stylelint-config-recommended-scss": "^4.0.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-scss": "^3.11.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint . --ext .js,.jsx",
+    "lint:js": "eslint . --ext .js,.jsx",
+    "lint:scss": "stylelint 'src/**/*.scss'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
