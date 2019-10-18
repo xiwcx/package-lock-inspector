@@ -1,0 +1,8 @@
+.package-list {
+    list-style-type: none;
+    padding: 0;
+
+    & & {
+        padding-left: 2em;
+    }
+}

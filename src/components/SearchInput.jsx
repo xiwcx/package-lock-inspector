@@ -13,7 +13,14 @@ function SearchInput({ searchString }) {
     return (
         <label htmlFor="search-input">
             Package Name
-            <input type="text" value={searchString} onChange={handleChange} id="search-input" />
+
+            <input
+                className="search-input"
+                id="search-input"
+                onChange={handleChange}
+                type="text"
+                value={searchString}
+            />
         </label>
     );
 }

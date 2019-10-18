@@ -1,0 +1,23 @@
+.package {
+    background-color: var(--color-primary);
+    padding: 0.5em;
+    margin: 0.25em;
+
+    &__name {
+        letter-spacing: 0.1em;
+        line-height: 1.5;
+    }
+
+    &__match {
+        background-color: var(--color-secondary);
+        border-radius: 0.1em;
+        color: var(--color-text);
+    }
+
+    &__version {
+        @include type-emphasis();
+
+        font-size: 0.8em;
+        margin: 0 0.5em;
+    }
+}

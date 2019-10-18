@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import PackageName from './PackageName';
 
 
-const PackagesList = ({ packages, searchString }) => {
+const PackagesList = ({
+    packages, // eslint-disable-line react/prop-types
+    searchString,
+}) => {
     const listItems = Object.keys(packages).map((packageName) => {
         const { dependencies, version } = packages[packageName];
 
@@ -17,13 +20,15 @@ const PackagesList = ({ packages, searchString }) => {
             : null;
 
         return (
-            <li key={packageName}>
-                <PackageName
-                    packageName={packageName}
-                    searchString={searchString}
-                />
+            <li className="package-list__item" key={packageName}>
+                <div className="package">
+                    <PackageName
+                        packageName={packageName}
+                        searchString={searchString}
+                    />
 
-                <span>{version}</span>
+                    <span className="package__version">{version}</span>
+                </div>
 
                 {nestedList}
             </li>
@@ -31,14 +36,13 @@ const PackagesList = ({ packages, searchString }) => {
     });
 
     return (
-        <ul>
+        <ul className="package-list">
             {listItems}
         </ul>
     );
 };
 
 PackagesList.propTypes = {
-    packages: PropTypes.objectOf().isRequired,
     searchString: PropTypes.string.isRequired,
 };
 

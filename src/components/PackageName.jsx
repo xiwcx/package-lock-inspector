@@ -8,10 +8,10 @@ const PackageName = ({ packageName, searchString }) => {
         const indexOfSubStringEnd = indexOfSubString + searchString.length;
 
         return (
-            <span>
+            <span className="package__name">
                 {packageName.slice(0, indexOfSubString)}
 
-                <mark>
+                <mark className="package__match">
                     {packageName.slice(indexOfSubString, indexOfSubStringEnd)}
                 </mark>
 
@@ -21,7 +21,7 @@ const PackageName = ({ packageName, searchString }) => {
     }
 
     return (
-        <span>
+        <span className="package__name">
             {packageName}
         </span>
     );
