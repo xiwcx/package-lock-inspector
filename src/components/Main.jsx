@@ -26,7 +26,7 @@ function Main() {
         );
 
     return (
-        <main>
+        <main className="main">
             <SearchInput searchString={searchString} />
 
             <PackageLockDrop setPackages={setPackages} />

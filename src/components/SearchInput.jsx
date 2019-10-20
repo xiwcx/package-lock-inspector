@@ -12,10 +12,12 @@ function SearchInput({ searchString }) {
 
     return (
         <label htmlFor="search-input">
-            Package Name
+            <span className="search__label">
+                Search Package Names
+            </span>
 
             <input
-                className="search-input"
+                className="search__input"
                 id="search-input"
                 onChange={handleChange}
                 type="text"

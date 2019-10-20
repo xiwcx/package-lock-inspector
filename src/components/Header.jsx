@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Header = () => (
-    <header>
-        <h1>Package Lock Inspector</h1>
-        <h2>
+    <header className="header">
+        <h1 className="header__title">Package Lock Inspector</h1>
+
+        <h2 className="header__subtitle">
             A tool to visualize and search&nbsp;
 
             <abbr title="Node Package Manager">NPM</abbr>

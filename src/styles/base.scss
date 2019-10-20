@@ -1,22 +1,37 @@
 html {
-    --color-background: #fff;
-    --color-text: hsla(220, 75%, 10%, 0.9);
-    --color-primary: hsl(220, 75%, 90%);
-    --color-secondary: hsla(160, 80%, 60%, 0.9);
+    // colors
+    --color-background: hsl(0, 0%, 95%);
+    --color-text: hsl(0, 59%, 5%);
+    --color-highlight: hsl(0, 0%, 100%);
+    --color-lowlight: hsl(0, 0%, 50%);
+    --color-primary: hsl(0, 59%, 51%);
+    --color-match: hsl(60, 79%, 71%);
+
+    // theme
+    --border-radius-default: 0.3em;
+
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 html[data-theme='dark'] {
-    --color-background: hsl(10, 75%, 5%);
-    --color-text: hsla(0, 0%, 100%, 0.9);
-    --color-primary: hsl(10, 70%, 15%);
-    --color-secondary: hsla(35, 70%, 40%, 0.9);
+    --color-background: hsl(0, 0%, 0%);
+    --color-text: hsl(0, 0%, 100%);
+    --color-highlight: hsl(0, 10%, 10%);
+    --color-match: hsl(60, 79%, 29%);
 }
 
 body {
     background-color: var(--color-background);
     color: var(--color-text);
-    font-family: input-mono-narrow, monospace;
+    font-family: input-sans-narrow, sans-serif;
     font-size: 120%;
     font-style: normal;
     font-weight: 400;
+    margin: 0;
 }

@@ -1,9 +1,0 @@
-@mixin type-emphasis() {
-    font-family: input-mono-narrow, monospace;
-    font-style: italic;
-    font-weight: 300;
-}
-
-.type-emphasis {
-    @include type-emphasis();
-}

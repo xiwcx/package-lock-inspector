@@ -1,6 +1,7 @@
 .package {
-    background-color: var(--color-primary);
-    margin: 0.25em;
+    background-color: var(--color-highlight);
+    border-left: 0.3em solid var(--color-primary);
+    margin-bottom: 0.5em;
     padding: 0.5em;
 
     &__name {
@@ -9,7 +10,7 @@
     }
 
     &__match {
-        background-color: var(--color-secondary);
+        background-color: var(--color-match);
         border-radius: 0.1em;
         color: var(--color-text);
     }

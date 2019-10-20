@@ -1,0 +1,40 @@
+@mixin type-display() {
+    font-family: input-sans-compressed, sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.type-display {
+    @include type-display();
+}
+
+@mixin type-dek() {
+    font-family: input-sans-narrow, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.type-dek {
+    @include type-dek();
+}
+
+@mixin type-emphasis() {
+    font-family: input-mono-narrow, monospace;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.type-emphasis {
+    @include type-emphasis();
+}
+
+@mixin type-mono() {
+    font-family: input-mono-narrow, monospace;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.type-mono {
+    @include type-mono();
+}

@@ -1,0 +1,48 @@
+.toggle {
+    position: relative;
+}
+
+.toggle__label {
+    $border-width: 0.25em;
+    $height: 1.5em;
+    $padding: 0.125em;
+    $circle-diameter: $height - ($border-width * 2) - ($padding * 2);
+
+    display: block;
+
+    &::before {
+        border: $border-width solid var(--color-lowlight);
+        border-radius: $height / 2;
+        content: "";
+        height: $height;
+        position: absolute;
+        right: 0;
+        transition: all 0.2s ease;
+        width: $height * 2;
+        will-change: border;
+
+        .toggle__checkbox:checked + & {
+            border: $border-width solid var(--color-primary);
+        }
+    }
+
+    &::after {
+        background: var(--color-lowlight);
+        border-radius: $circle-diameter / 2;
+        content: "";
+        height: $circle-diameter;
+        position: absolute;
+        right: $border-width + $padding + 1.5em;
+        top: $border-width + $padding;
+        transition: all 0.2s ease;
+        width: $circle-diameter;
+        will-change:
+            background,
+            right;
+
+        .toggle__checkbox:checked + & {
+            background: var(--color-primary);
+            right: $border-width + $padding;
+        }
+    }
+}

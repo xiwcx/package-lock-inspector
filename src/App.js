@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.scss';
-import Aside from './components/Aside';
 import Header from './components/Header';
 import Main from './components/Main';
+import Settings from './components/Settings';
 
 function App() {
     return (
         <div className="App">
             <Header />
-            <Aside />
+            <Settings />
             <Main />
         </div>
     );

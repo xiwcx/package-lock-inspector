@@ -1,9 +1,16 @@
 @import 'styles/base';
 
+// utils
+@import 'styles/utils';
+
 // theme
-@import 'styles/theme/typography';
+@import 'styles/typography';
 
 // blocks
+@import 'styles/blocks/header';
+@import 'styles/blocks/main';
 @import 'styles/blocks/package';
 @import 'styles/blocks/packages-list';
-@import 'styles/blocks/search-input';
+@import 'styles/blocks/search';
+@import 'styles/blocks/settings';
+@import 'styles/blocks/toggle';
