@@ -11,7 +11,7 @@ function SearchInput({ searchString }) {
     const handleChange = (event) => history.push(getQueryString(event.target.value));
 
     return (
-        <label htmlFor="search-input">
+        <label className="search layout-controls__search" htmlFor="search-input">
             <span className="search__label">
                 Search Package Names
             </span>

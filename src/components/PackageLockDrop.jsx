@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import PropTypes from 'prop-types';
+import File from './File';
 
 const recursiveFilterObjectKeys = (obj) => Object.keys(obj).reduce((filteredObject, keyName) => {
     const { dependencies, version } = obj[keyName];
@@ -28,17 +29,13 @@ function PackageLockDrop({ setPackages }) {
 
         reader.readAsText(acceptedFiles[0]);
     }, [setPackages]);
-    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+    const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
     /* eslint-disable react/jsx-props-no-spreading */
     return (
         <div {...getRootProps()}>
             <input {...getInputProps()} />
-            {
-                isDragActive
-                    ? <p>Drop the files here ...</p>
-                    : <p>Drag &apos;n&apos; drop some files here, or click to select files</p>
-            }
+            <div className="drop-zone"><File /></div>
         </div>
     );
 }

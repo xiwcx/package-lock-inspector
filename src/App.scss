@@ -3,10 +3,16 @@
 // utils
 @import 'styles/utils';
 
+// layout
+@import 'styles/layout';
+
 // theme
 @import 'styles/typography';
 
 // blocks
+@import 'styles/blocks/clear-button';
+@import 'styles/blocks/drop-zone';
+@import 'styles/blocks/file';
 @import 'styles/blocks/header';
 @import 'styles/blocks/main';
 @import 'styles/blocks/package';

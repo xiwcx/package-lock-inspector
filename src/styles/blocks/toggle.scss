@@ -1,4 +1,5 @@
 .toggle {
+    margin-bottom: 0.5em;
     position: relative;
 }
 
@@ -9,6 +10,8 @@
     $circle-diameter: $height - ($border-width * 2) - ($padding * 2);
 
     display: block;
+    font-size: 0.8em;
+    padding-right: $height * 3;
 
     &::before {
         border: $border-width solid var(--color-lowlight);
@@ -45,4 +48,6 @@
             right: $border-width + $padding;
         }
     }
+
+    @include type-dek();
 }

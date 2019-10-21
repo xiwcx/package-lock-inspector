@@ -7,12 +7,11 @@
 .search__input {
     background-color: var(--color-highlight);
     border: none;
-    border-radius: var(--border-radius-default);
     color: var(--color-text);
     font-family: input-mono-narrow, monospace;
     font-size: inherit;
     font-style: normal;
     font-weight: 200;
-    padding: 0.5em;
+    padding: $padding-input-default;
     width: 100%;
 }
