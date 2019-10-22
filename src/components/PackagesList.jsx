@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import PackageName from './PackageName';
 
 
@@ -21,14 +22,14 @@ const PackagesList = ({
 
         return (
             <li className="package-list__item" key={packageName}>
-                <div className="package">
+                <Link className="package" to={`?query=${packageName}`}>
                     <PackageName
                         packageName={packageName}
                         searchString={searchString}
                     />
 
                     <span className="package__version">{version}</span>
-                </div>
+                </Link>
 
                 {nestedList}
             </li>
