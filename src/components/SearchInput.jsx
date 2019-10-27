@@ -1,12 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import PropTypes from 'prop-types';
-
+import useSearchString from '../hooks/search-string';
 
 const getQueryString = (value) => (value ? `?query=${value}` : '');
 
-function SearchInput({ searchString }) {
+function SearchInput() {
     const history = useHistory();
+    const searchString = useSearchString();
 
     const handleChange = (event) => history.push(getQueryString(event.target.value));
 
@@ -26,9 +26,5 @@ function SearchInput({ searchString }) {
         </label>
     );
 }
-
-SearchInput.propTypes = {
-    searchString: PropTypes.string.isRequired,
-};
 
 export default SearchInput;
