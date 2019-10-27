@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 
-function useSearchString(location) {
+function useSearchString() {
+    const location = useLocation();
     const [searchString, setSearchString] = useState('');
 
     useEffect(() => {

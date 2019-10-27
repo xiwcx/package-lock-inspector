@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Toggle = ({ bool, func, label }) => {
+const Toggle = ({ bool, setFunc, label }) => {
     const checkboxId = `${label.split(' ').join('-').toLowerCase()}-checkbox`;
 
     return (
@@ -10,7 +10,7 @@ const Toggle = ({ bool, func, label }) => {
                 checked={bool}
                 className="toggle__checkbox visually-hidden"
                 id={checkboxId}
-                onChange={func}
+                onChange={() => setFunc(!bool)}
                 type="checkbox"
             />
 
@@ -26,8 +26,8 @@ const Toggle = ({ bool, func, label }) => {
 
 Toggle.propTypes = {
     bool: PropTypes.bool.isRequired,
-    func: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
+    setFunc: PropTypes.func.isRequired,
 };
 
 export default Toggle;
