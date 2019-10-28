@@ -1,4 +1,4 @@
-$mq-md: "screen and (min-width: 60em)and (min-height: 40em)";
+$mq-md: "screen and (min-width: 60em)and (min-height: 20em)";
 
 $padding-input-default: 0.5em;
 
@@ -31,21 +31,12 @@ $padding-input-default: 0.5em;
 }
 
 .layout-app__main {
+    display: grid;
+    grid-template-columns: minmax(auto, 50em);
+    justify-content: center;
+    padding: 1em;
+
     @media #{$mq-md} {
         grid-area: main;
-    }
-}
-
-// ===============
-// layout controls
-// ===============
-
-.layout-controls {
-    @media #{$mq-md} {
-        align-items: end;
-        display: grid;
-        grid-gap: 1em;
-        grid-template-columns: 1fr auto;
-        margin-bottom: 2em;
     }
 }
