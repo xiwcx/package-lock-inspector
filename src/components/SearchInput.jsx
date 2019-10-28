@@ -25,19 +25,21 @@ function SearchInput() {
     );
 
     return (
-        <label className="search layout-controls__search" htmlFor="search-input">
-            <span className="search__label">
+        <>
+            {/* no idea why this is getting set off ¯\_(ツ)_/¯ */}
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+            <label className="inputs__text-label" htmlFor="search-input">
                 Search Package Names
-            </span>
+            </label>
 
             <input
-                className="search__input"
+                className="inputs__text"
                 id="search-input"
                 onChange={handleChange}
                 type="text"
                 value={searchString}
             />
-        </label>
+        </>
     );
 }
 
