@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PackageName from './PackageName';
+import { GAevent } from '../utils/ga';
 
 
 const PackagesList = ({
@@ -10,7 +11,6 @@ const PackagesList = ({
 }) => {
     const listItems = Object.keys(packages).map((packageName) => {
         const { dependencies, version } = packages[packageName];
-
         const nestedList = dependencies
             ? (
                 <PackagesList
@@ -19,10 +19,18 @@ const PackagesList = ({
                 />
             )
             : null;
+        const selectPackage = () => GAevent({
+            category: 'Interaction',
+            action: 'select package',
+        });
 
         return (
             <li className="package-list__item" key={packageName}>
-                <Link className="package" to={`?query=${packageName}`}>
+                <Link
+                    className="package"
+                    onClick={selectPackage}
+                    to={`?query=${packageName}`}
+                >
                     <PackageName
                         packageName={packageName}
                         searchString={searchString}

@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import PropTypes from 'prop-types';
 import File from './File';
+import { GAevent } from '../utils/ga';
 
 const recursiveFilterObjectKeys = (obj) => Object.keys(obj).reduce((filteredObject, keyName) => {
     const { dependencies, version } = obj[keyName];
@@ -23,6 +24,11 @@ function PackageLockDrop({ setPackages }) {
 
         reader.onload = () => {
             const parsedResults = parsePackageLock(reader.result);
+
+            GAevent({
+                category: 'Interaction',
+                action: 'upload',
+            });
 
             setPackages(() => recursiveFilterObjectKeys(parsedResults));
         };

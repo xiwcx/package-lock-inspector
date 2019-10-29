@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { GAevent } from '../utils/ga';
 
 const Toggle = ({ bool, setFunc, label }) => {
     const checkboxId = `${label.split(' ').join('-').toLowerCase()}-checkbox`;
+    const toggle = () => {
+        GAevent({
+            category: 'Interaction',
+            action: `toggle ${label}`,
+            value: !bool ? 1 : 0,
+        });
+
+        return setFunc(!bool);
+    };
 
     return (
         <div className="toggle">
@@ -10,7 +20,7 @@ const Toggle = ({ bool, setFunc, label }) => {
                 checked={bool}
                 className="toggle__checkbox visually-hidden"
                 id={checkboxId}
-                onChange={() => setFunc(!bool)}
+                onChange={toggle}
                 type="checkbox"
             />
 

@@ -3,8 +3,12 @@ import { useLocalStorage } from 'react-use';
 import { CONFIG_DARK_THEME, CONFIG_LOCAL_STORAGE } from '../utils/config';
 import Toggle from './Toggle';
 
+
 function Config() {
-    const [configDarkTheme, setConfigDarkTheme] = useLocalStorage(CONFIG_DARK_THEME, false);
+    const [configDarkTheme, setConfigDarkTheme] = useLocalStorage(
+        CONFIG_DARK_THEME,
+        window.matchMedia('(prefers-color-scheme: dark)').matches,
+    );
     const [
         configLocalStorage,
         setConfigLocalStorage,

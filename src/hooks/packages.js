@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
+import { useLocalStorage } from 'react-use';
+import { CONFIG_LOCAL_STORAGE } from '../utils/config';
 
-const PACKAGE_LOCK = 'packageLock';
+const PACKAGE_LOCK = 'package-lock';
+const getInitialPackagesValue = (configLocalStorage) => (configLocalStorage
+    ? JSON.parse(localStorage.getItem(PACKAGE_LOCK)) || {}
+    : {});
+const setPackagesLocalStorageValue = (configLocalStorage, packages) => (configLocalStorage
+    ? localStorage.setItem(PACKAGE_LOCK, JSON.stringify(packages))
+    : null);
 
 function usePackages() {
-    const [packages, setPackages] = useState(
-        JSON.parse(localStorage.getItem(PACKAGE_LOCK)) || {},
-    );
+    const [configLocalStorage] = useLocalStorage(CONFIG_LOCAL_STORAGE);
+    const [packages, setPackages] = useState(getInitialPackagesValue(configLocalStorage));
 
-    useEffect(() => {
-        localStorage.setItem(PACKAGE_LOCK, JSON.stringify(packages));
-    });
+    useEffect(() => { setPackagesLocalStorageValue(configLocalStorage, packages); });
 
     return [packages, setPackages];
 }
