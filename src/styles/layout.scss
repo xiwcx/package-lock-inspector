@@ -33,6 +33,7 @@ $padding-input-default: 0.5em;
 .layout-app__main {
     display: grid;
     grid-template-columns: minmax(auto, 50em);
+    grid-template-rows: min-content auto;
     justify-content: center;
     padding: 1em;
 
