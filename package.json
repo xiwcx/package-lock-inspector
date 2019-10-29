@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:scss": "stylelint 'src/**/*.scss'",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "homepage": "https://welchcanavan.gitlab.io/package-lock-inspector",
@@ -48,6 +48,14 @@
   },
   "devDependencies": {
     "pre-commit": "^1.2.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "transformIgnorePatterns": [
+      "/!node_modules\\/deepdash-es/"
+    ]
   },
   "pre-commit": [
     "lint:js",

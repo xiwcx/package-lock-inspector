@@ -6,9 +6,25 @@ import {
     set,
 } from 'ramda';
 
-const isIncludedInPackageName = (str, searchString) => str.includes(searchString);
+/**
+ * returns whether a search string matches a base string
+ * @function isIncludedInPackageName
+ * @param {string} str - base string
+ * @param {string} searchString - string being searched
+ *
+ * @returns {boolean}
+ */
+export const isIncludedInPackageName = (str, searchString) => str.includes(searchString);
 
-const getPathMatchCount = (packagePath, searchString) => {
+/**
+ * returns number of matches within a given path
+ * @function getPathMatchCount
+ * @param {array} packagePath - array of keys to an value in an object
+ * @param {string} searchString - string being searched
+ *
+ * @returns {integer}
+ */
+export const getPathMatchCount = (packagePath, searchString) => {
     const matches = packagePath
         .filter((str) => (str !== 'dependencies') && isIncludedInPackageName(str, searchString));
 
