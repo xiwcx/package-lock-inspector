@@ -12,7 +12,10 @@ test:
   stage: test
   script:
     - npm install
-    - npm run lint:js && npm run lint:scss
+    - npm run lint:js && npm run lint:scss && npm t
+  artifacts:
+    paths:
+      - coverage/
 
 pages:
   stage: deploy
