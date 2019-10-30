@@ -44,21 +44,20 @@ const recursiveFilter = (accumulator, context, packages, searchString) => {
         const deleteCount = pkg.path.length - depth + 1;
         const currentPath = [...pkg.path].splice(0, deleteCount);
         const pkgClone = clone(path(currentPath, packages));
-        const currentPathLens = lensPath(currentPath, accumulator);
 
-        if (!path(currentPath, accumulator)) {
+        if (!path(currentPath, newAccumulator)) {
             const currentPathTo = [...pkg.path].splice(0, deleteCount - 1);
 
             pkgClone.dependencies = {};
 
             if (currentPathTo.length) {
                 newAccumulator = set(
-                    currentPathLens,
+                    lensPath(currentPath),
                     pkgClone,
-                    accumulator,
+                    newAccumulator,
                 );
             } else {
-                accumulator[currentDeepDashObject.key] = pkgClone;
+                newAccumulator[currentDeepDashObject.key] = pkgClone;
             }
         }
 
