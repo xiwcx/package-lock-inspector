@@ -1,9 +1,9 @@
 .package {
     background-color: var(--color-highlight);
-    border-left: 0.3em solid var(--color-primary);
+    border-inline-start: 0.3em solid var(--color-primary);
     color: var(--color-text);
     display: block;
-    margin-bottom: 0.5em;
+    margin-block-end: 0.5em;
     padding: 0.5em;
     text-decoration: none;
 

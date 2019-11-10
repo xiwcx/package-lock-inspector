@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import { useDebounce } from 'react-use';
 import { useLocation } from 'react-router';
-import Config from './components/Config';
+import Aside from './components/Aside';
 import Header from './components/Header';
 import Inputs from './components/Inputs';
 import Packages from './components/Packages';
@@ -36,7 +36,7 @@ function App() {
         <div className="layout-app">
             <Header />
 
-            <Config />
+            <Aside />
 
             <main className="layout-app__main main">
                 { content }
